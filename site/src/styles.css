@@ -25,6 +25,9 @@
   --dur-reveal: .7s;
 
   --header-h: 84px;
+  --foot-h: 48px;
+  /* pinned stages sit between the fixed header and the fixed control bar */
+  --meta-top: calc(var(--header-h) + clamp(12px, 3.6svh, 31px));
   --m45: 4.5%;
   --m6: 6%;
   --m8: 8%;
@@ -130,7 +133,7 @@ html[data-header-mode="blue"] .header .mark b { color: var(--white); }
 
 .foot {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 44;
-  height: 48px; padding: 0 var(--m45);
+  height: var(--foot-h); padding: 0 var(--m45);
   display: flex; justify-content: space-between; align-items: center; gap: 20px;
   background: var(--white); color: var(--carbon);
   border-top: 1px solid var(--hair-on-white);
@@ -207,9 +210,9 @@ html[lang^="es"] .langToggle [data-lang-opt="es"], html[lang="en"] .langToggle [
 .range:hover::-webkit-slider-thumb { box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 18%, transparent); }
 
 /* Shared stage meta row — §3.3 */
-.chapterMeta { position: absolute; z-index: 5; top: 115px; left: var(--m45); right: var(--m45); display: flex; justify-content: space-between; font-size: 12px; line-height: 1.55; }
+.chapterMeta { position: absolute; z-index: 5; top: var(--meta-top); left: var(--m45); right: var(--m45); display: flex; justify-content: space-between; font-size: 12px; line-height: 1.55; }
 .metaName { margin-left: 35px; }
-.sceneCaption { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: 35px; display: flex; justify-content: space-between; font-size: 11px; color: var(--silver); }
+.sceneCaption { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: calc(var(--foot-h) + 14px); display: flex; justify-content: space-between; font-size: 11px; color: var(--silver); }
 
 /* =========================================================
    Opening — §3.1
@@ -231,7 +234,7 @@ html[lang^="es"] .langToggle [data-lang-opt="es"], html[lang="en"] .langToggle [
 /* the paper header gradient must not veil the panel: paint it only left of the panel */
 html[data-header-mode="paper"].header-on-hero .header { background-size: var(--panel-x) 100%; background-repeat: no-repeat; }
 .titleLast { z-index: 3; top: calc(var(--t1-top) + var(--t1) * 1.02); left: 3.9%; font-size: calc(var(--t1) * .874); font-weight: 100; }
-.openingBottom { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: 100px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+.openingBottom { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: calc(var(--foot-h) + clamp(24px, 5svh, 52px)); display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
 .openingBottom > * { pointer-events: auto; }
 .openingBottom > p { font-size: 14px; line-height: 1.45; }
 .openingBottom > p > span { color: var(--ink-2); }
@@ -240,10 +243,9 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
 .begin:hover .beginArrow { background: var(--carbon); color: var(--white); transform: rotate(45deg); }
 
 @media (min-width: 760px) and (max-height: 1000px) {
-  .opening { min-height: 640px; }
+  .opening { min-height: 520px; }
   .openingNote { top: 99px; }
   .opening { --t1: min(15.1vw, 23svh); }
-  .openingBottom { bottom: 90px; }
 }
 @media (min-width: 1800px) {
   .opening { max-height: 1200px; }
@@ -254,7 +256,7 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    Prologue — §3.2
    ========================================================= */
 .prologue { position: relative; height: 230svh; border-top: 1px solid var(--hair-on-white); background: var(--white); color: var(--carbon); }
-.prologueFrame { position: sticky; top: 0; height: 100svh; display: grid; grid-template-columns: 28% 72%; padding: 150px var(--m45) 130px; align-content: center; }
+.prologueFrame { position: sticky; top: 0; height: 100svh; display: grid; grid-template-columns: 28% 72%; padding: clamp(96px, 18svh, 150px) var(--m45) clamp(70px, 15svh, 130px); align-content: center; }
 .prologueSide { font-size: 13px; line-height: 1.4; align-self: start; padding-top: .35em; }
 .prologueCopy {
   --lh: 1.03em;
@@ -268,8 +270,8 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
 .drumLine.is-accent { color: var(--blue); }
 /* appendix: which chapter tells this project */
 .drumRef { position: absolute; left: .08em; bottom: 100%; margin-bottom: .7em; white-space: nowrap; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0; color: var(--ink-2); }
-.prologueNote { margin-top: 28px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
-.prologueLink { position: absolute; right: 6%; bottom: 100px; font-size: 48px; line-height: 1; text-decoration: none; }
+.prologueNote { max-width: 52ch; margin-top: 28px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+.prologueLink { position: absolute; right: 6%; bottom: calc(var(--foot-h) + clamp(16px, 6svh, 52px)); font-size: 48px; line-height: 1; text-decoration: none; }
 
 /* =========================================================
    Chapters — shared
@@ -307,11 +309,11 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    01 Anamorph — §3.3
    ========================================================= */
 .anamorphTrack { position: relative; height: 220svh; background: #000; }
-.anamorphStage { position: sticky; top: 0; isolation: isolate; height: 100svh; min-height: 800px; overflow: hidden; background: #000; color: var(--white); }
+.anamorphStage { position: sticky; top: 0; isolation: isolate; height: 100svh; overflow: hidden; background: #000; color: var(--white); }
 .anamorphStage .metaName { color: var(--silver); }
-.anamorphLead { position: absolute; z-index: 2; top: 185px; left: var(--m6); font-size: clamp(27px, 3.5vw, 54px); letter-spacing: calc(-.035em + var(--dt)); line-height: 1.55; pointer-events: none; }
+.anamorphLead { position: absolute; z-index: 2; top: calc(var(--header-h) + clamp(44px, 12.5svh, 101px)); left: var(--m6); font-size: clamp(20px, min(3.5vw, 6.2svh), 54px); letter-spacing: calc(-.035em + var(--dt)); line-height: 1.55; pointer-events: none; }
 .anamorphCanvas { position: absolute; z-index: 1; left: 0; right: 0; top: 30%; height: 42%; width: 100%; pointer-events: none; }
-.anamorphQuestion { position: absolute; z-index: 2; left: var(--m6); bottom: 108px; font-size: clamp(22px, 2.2vw, 36px); letter-spacing: calc(-.025em + var(--dt)); line-height: 1.2; pointer-events: none; }
+.anamorphQuestion { position: absolute; z-index: 2; left: var(--m6); bottom: calc(var(--foot-h) + clamp(20px, 7.5svh, 60px)); font-size: clamp(18px, min(2.2vw, 4.2svh), 36px); letter-spacing: calc(-.025em + var(--dt)); line-height: 1.2; pointer-events: none; }
 .panelButtons button { font-size: 13px; color: var(--silver); transition: color .3s; }
 .panelButtons button[aria-pressed="true"] { color: var(--white); }
 .panelButtons button span { margin-left: 18px; }
@@ -365,22 +367,23 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    03 Promise rupture — §3.5
    ========================================================= */
 .ruptureTrack { position: relative; height: 230svh; background: var(--night); }
-.rupture { position: sticky; top: 0; min-height: 680px; }
+.rupture { position: sticky; top: 0; min-height: 0; }
 .rupture::after { display: none; }
 .promiseGradient { position: absolute; inset: 0; background: linear-gradient(180deg, #000 0%, #000 30%, #030a26 42%, #0a1f7a 60%, #1338e0 82%, #1a45ff 90%, #5a7bff 100%); opacity: var(--gradient-in, 1); transform: translateY(calc((1 - var(--gradient-in, 1)) * 55%)); will-change: transform, opacity; }
-.fractureTitle { position: absolute; top: 30%; left: var(--m45); right: var(--m45); font-weight: 400; letter-spacing: calc(-.065em + var(--dt)); line-height: 1; transform: translateY(calc(max(0, var(--promise-progress, 0) - .55) * -48vh)); }
-.fractureThe { display: block; margin-bottom: 5px; font-size: clamp(42px, 5.5vw, 90px); }
-.fractureWord { position: relative; display: block; height: 1.08em; font-size: 14.6vw; line-height: 1; white-space: nowrap; }
+/* the title rises as the word bursts, but stops short of the meta row */
+.fractureTitle { position: absolute; top: 30%; left: var(--m45); right: var(--m45); font-weight: 400; letter-spacing: calc(-.065em + var(--dt)); line-height: 1; transform: translateY(max(calc(max(0, var(--promise-progress, 0) - .55) * -48svh), min(0px, calc(var(--meta-top) + 34px - 30svh)))); }
+.fractureThe { display: block; margin-bottom: 5px; font-size: clamp(30px, min(5.5vw, 11svh), 90px); }
+.fractureWord { position: relative; display: block; height: 1.08em; font-size: min(14.6vw, 30svh); line-height: 1; white-space: nowrap; }
 .fractureWhole { display: block; }
 /* particles overflow the word on every side so the blast has room before fading */
 .fractureSpores { position: absolute; left: -15%; top: -250%; width: 130%; height: 600%; opacity: 0; pointer-events: none; }
 .rupture[data-fractured="true"] .fractureWhole { opacity: 0; }
 .rupture[data-fractured="true"] .fractureSpores { opacity: 1; }
-.ruptureQuestion { position: absolute; left: 61%; right: 6%; bottom: 15%; max-width: 25ch; font-size: 25px; line-height: 1.28; }
-.ruptureState { position: absolute; left: var(--m45); bottom: 78px; display: grid; gap: 8px; }
+.ruptureQuestion { position: absolute; left: 61%; right: 6%; bottom: max(15%, calc(var(--foot-h) + 24px)); max-width: 25ch; font-size: clamp(19px, 4.2svh, 25px); line-height: 1.28; }
+.ruptureState { position: absolute; left: var(--m45); bottom: calc(var(--foot-h) + clamp(18px, 3.8svh, 30px)); display: grid; gap: 8px; }
 .ruptureState span { font-size: 15px; }
 .ruptureState small { font-size: 10px; color: var(--silver); }
-.ruptureBar { position: absolute; left: 44.5%; bottom: 82px; width: 185px; height: 1px; background: var(--hair-on-carbon); }
+.ruptureBar { position: absolute; left: 44.5%; bottom: calc(var(--foot-h) + clamp(22px, 4.3svh, 34px)); width: 185px; height: 1px; background: var(--hair-on-carbon); }
 .brandMarquee { position: relative; padding-top: 72px; background: var(--white); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 /* four logo sets: -50% shifts by two sets, so each half stays wider than the viewport and the loop never shows a gap */
 .brandTrack { display: flex; width: max-content; height: 36px; animation: brandScroll 80s linear infinite; will-change: transform; }
@@ -392,16 +395,16 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    05 Scale — §3.7
    ========================================================= */
 .scaleJourney { position: relative; height: 220svh; background: var(--night); }
-.scaleFrame { position: sticky; top: 0; height: 100svh; min-height: 800px; isolation: isolate; overflow: hidden; color: var(--white); }
+.scaleFrame { position: sticky; top: 0; height: 100svh; isolation: isolate; overflow: hidden; color: var(--white); }
 .scaleFrame .sceneArt { z-index: 0; }
 .scaleFrame::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(9, 14, 19, .75)); }
 .scaleStencil { position: absolute; inset: 0; z-index: 2; display: flex; justify-content: center; align-items: center; overflow: hidden; background: var(--night); color: var(--white); mix-blend-mode: multiply; pointer-events: none; }
 /* no will-change: a promoted layer is rasterised once and, after the 26x zoom, Chrome keeps only a
    clipped tile of it, so the digits came back cut off. Repainting per frame keeps the glyphs whole and crisp. */
-.scaleStencil > span { display: block; font-size: 31vw; font-weight: 500; letter-spacing: calc(-.075em + var(--dt)); line-height: .9; transform-origin: 50% 52%; }
+.scaleStencil > span { display: block; font-size: min(31vw, 70svh); font-weight: 500; letter-spacing: calc(-.075em + var(--dt)); line-height: .9; transform-origin: 50% 52%; }
 .scaleFrame .chapterMeta { z-index: 4; }
-.scaleCopy { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: 110px; display: flex; justify-content: space-between; align-items: flex-end; }
-.scaleCopy > p { max-width: 23ch; font-size: 30px; line-height: 1.2; }
+.scaleCopy { position: absolute; z-index: 4; left: var(--m45); right: var(--m45); bottom: calc(var(--foot-h) + clamp(40px, 7.8svh, 62px)); display: flex; justify-content: space-between; align-items: flex-end; }
+.scaleCopy > p { max-width: 23ch; font-size: clamp(21px, 4.6svh, 30px); line-height: 1.2; }
 .scaleCopy > span { max-width: 18ch; font-size: 13px; line-height: 1.55; }
 
 /* =========================================================
@@ -421,7 +424,7 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    07 Interface threshold — §3.9
    ========================================================= */
 .interfaceTrack { position: relative; height: 210svh; background: var(--night); }
-.stage { position: sticky; top: 0; height: 100svh; min-height: 780px; isolation: isolate; overflow: hidden; background: var(--night); color: var(--white); }
+.stage { position: sticky; top: 0; height: 100svh; isolation: isolate; overflow: hidden; background: var(--night); color: var(--white); }
 .stage .art { position: absolute; inset: 0; }
 .split { background: #000; overflow: hidden; }
 .split__blue, .split__shade, .split__doors { position: absolute; inset: 0; }
@@ -439,16 +442,16 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
 .shutter { position: absolute; top: 0; bottom: 0; z-index: 2; width: 50%; display: flex; align-items: center; pointer-events: none; opacity: max(0, calc(1 - var(--opening) * 2.5)); will-change: transform, opacity; }
 .shutterL { left: 0; justify-content: flex-start; padding-left: 4%; transform: translateX(calc(var(--opening) * -20%)); }
 .shutter > span { transform: translateY(-7%); color: #dfe3e2; letter-spacing: calc(-.075em + var(--dt)); line-height: .79; }
-.shutter > span { font-size: 9.6vw; letter-spacing: calc(-.06em + var(--dt)); }
+.shutter > span { font-size: min(9.6vw, 20svh); letter-spacing: calc(-.06em + var(--dt)); }
 .shutter > span > span { display: block; }
 
 
-.destination { position: absolute; z-index: 3; top: 47%; left: 17%; width: 75%; font-size: clamp(110px, 14vw, 220px); letter-spacing: calc(-.065em + var(--dt)); line-height: .82; pointer-events: none; opacity: max(0, calc((var(--opening) - .85) * 6.67)); transform: translateY(-50%) scale(calc(.82 + var(--opening) * .18)); transform-origin: 20% 50%; }
+.destination { position: absolute; z-index: 3; top: 47%; left: 17%; width: 75%; font-size: clamp(min(110px, 24svh), min(14vw, 30svh), 220px); letter-spacing: calc(-.065em + var(--dt)); line-height: .82; pointer-events: none; opacity: max(0, calc((var(--opening) - .85) * 6.67)); transform: translateY(-50%) scale(calc(.82 + var(--opening) * .18)); transform-origin: 20% 50%; }
 .destination > span { display: block; white-space: nowrap; }
 .destination > span:nth-child(2) { margin-left: 16%; }
-.stage .chapterMeta { transform: translateY(calc(var(--opening) * -27px)); }
-.interfaceCopy { position: absolute; z-index: 5; left: var(--m6); bottom: 90px; opacity: max(0, calc(1 - var(--opening) * 2.5)); }
-.interfaceCopy p { max-width: 24ch; font-size: clamp(22px, 2.2vw, 36px); letter-spacing: calc(-.025em + var(--dt)); line-height: 1.2; }
+.stage .chapterMeta { transform: translateY(calc(var(--opening) * -1 * min(27px, 3.4svh))); }
+.interfaceCopy { position: absolute; z-index: 5; left: var(--m6); bottom: calc(var(--foot-h) + clamp(22px, 5.2svh, 42px)); opacity: max(0, calc(1 - var(--opening) * 2.5)); }
+.interfaceCopy p { max-width: 24ch; font-size: clamp(18px, min(2.2vw, 4.2svh), 36px); letter-spacing: calc(-.025em + var(--dt)); line-height: 1.2; }
 
 /* =========================================================
    08 Choices — §3.10
@@ -518,35 +521,35 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
    Mobile — §11
    ========================================================= */
 @media (max-width: 759px) {
-  :root { --header-h: 102px; }
+  :root { --header-h: 102px; --foot-h: 42px; --meta-top: calc(var(--header-h) + clamp(10px, 3svh, 26px)); }
   .header { flex-wrap: wrap; align-content: center; row-gap: 0; padding-inline: 6%; }
   .wordmark { flex-basis: 100%; font-size: 14px; }
   .wordmark .mark { font-size: 26px; }
   .nav ul { gap: 23px; }
   .nav a { font-size: 12px; min-height: 30px; }
-  .foot { height: 42px; padding: 0 6%; gap: 12px; }
+  .foot { padding: 0 6%; gap: 12px; }
   .toggles { gap: 14px; }
   .indexToggle { gap: 14px; }
 
-  .opening { height: 100svh; min-height: 740px; }
+  .opening { height: 100svh; min-height: 560px; }
   .openingNote { top: 112px; left: 6%; right: 6%; font-size: 10px; }
   .openingNote > span:last-child { text-align: right; }
   .titleFirst { font-size: 17.5vw; top: 32%; left: 5%; }
   .titleFirst > span { font-size: .48em; margin-left: .26em; padding-top: .24em; }
   .titleLast { font-size: 14.6vw; top: calc(32% + 24vw); bottom: auto; left: 5%; }
-  .openingBottom { left: 6%; right: 6%; bottom: 60px; flex-wrap: wrap; row-gap: 26px; }
+  .openingBottom { left: 6%; right: 6%; bottom: calc(var(--foot-h) + 18px); flex-wrap: wrap; row-gap: 26px; }
   .openingBottom > p { font-size: 10px; line-height: 1.5; order: 1; flex: 1; }
   .begin { order: 2; flex-direction: column-reverse; gap: 10px; font-size: 11px; }
   .beginArrow { width: 46px; height: 46px; font-size: 22px; }
 
   .prologue { height: 200svh; }
-  .prologueFrame { display: block; min-height: 650px; padding: 160px 6% 85px; }
+  .prologueFrame { display: block; padding: clamp(130px, 25svh, 160px) 6% 85px; }
   .prologueSide { margin-bottom: 60px; font-size: 11px; }
   .prologueCopy { font-size: 7vw; }
   .prologueNote { max-width: 25ch; margin-top: 40px; font-size: 12px; }
-  .prologueLink { font-size: 36px; bottom: 78px; }
+  .prologueLink { font-size: 36px; bottom: calc(var(--foot-h) + clamp(16px, 4.3svh, 36px)); }
 
-  .chapterMeta { top: 128px; left: 6% !important; right: 6% !important; font-size: 10px; }
+  .chapterMeta { left: 6% !important; right: 6% !important; font-size: 10px; }
   .metaName { margin-left: 15px; }
   .readingRoom { display: block; padding: 90px 6%; }
   .chapterIndex { margin-bottom: 25px; font-size: 11px; }
@@ -562,11 +565,10 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
   .eventRow--stars .eventYear { gap: 8px; }
   .stars { font-size: 13px; letter-spacing: 1px; }
 
-  .anamorphStage { min-height: 700px; }
-  .anamorphLead { top: 175px; }
+  .anamorphLead { top: calc(var(--header-h) + clamp(40px, 8.6svh, 73px)); font-size: clamp(22px, 7vw, 27px); }
   .anamorphCanvas { top: 34%; height: 26%; }
   .heroPanel { display: none; }
-  .anamorphQuestion { bottom: 250px; }
+  .anamorphQuestion { bottom: calc(var(--foot-h) + 24svh); font-size: 22px; }
 
   .labStage { display: block; min-height: 0; padding: 180px 6% 65px; }
   .labIntro { position: static; }
@@ -578,23 +580,21 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
   .controlArt { height: 300px; margin-top: 36px; }
 
   .ruptureTrack { height: 200svh; }
-  .rupture { min-height: 640px; }
   .fractureTitle { top: 32%; left: 5%; right: 5%; }
-  .fractureThe { margin-bottom: 12px; font-size: 12vw; }
-  .fractureWord { font-size: 14.6vw; }
-  .ruptureQuestion { left: 27%; right: 6%; bottom: 155px; font-size: 21px; }
-  .ruptureBar { left: 6%; bottom: 60px; }
+  .fractureThe { margin-bottom: 12px; font-size: min(12vw, 8svh); }
+  .fractureWord { font-size: min(14.6vw, 10svh); }
+  .ruptureQuestion { left: 27%; right: 6%; bottom: calc(var(--foot-h) + clamp(84px, 13.4svh, 113px)); font-size: 21px; }
+  .ruptureBar { left: 6%; bottom: calc(var(--foot-h) + 18px); }
   .brandMarquee { padding-top: 48px; }
   .brandTrack { height: 26px; }
-  .ruptureState { left: 6%; bottom: 80px; }
+  .ruptureState { left: 6%; bottom: calc(var(--foot-h) + 34px); }
 
   .scaleJourney { height: 175svh; }
-  .scaleFrame { min-height: 740px; }
-  .scaleStencil > span { font-size: 30vw; }
-  .scaleCopy { display: block; left: 6%; right: 6%; }
-  .scaleCopy > p { max-width: 22ch; font-size: 25px; }
+  .scaleStencil > span { font-size: min(30vw, 70svh); }
+  .scaleCopy { display: block; left: 6%; right: 6%; bottom: calc(var(--foot-h) + clamp(44px, 8svh, 68px)); }
+  .scaleCopy > p { max-width: 22ch; font-size: clamp(21px, 3.6svh, 25px); }
   .scaleCopy > span { display: block; max-width: none; margin-top: 30px; font-size: 11px; }
-  .sceneCaption { left: 6%; right: 6%; bottom: 30px; font-size: 10px; }
+  .sceneCaption { left: 6%; right: 6%; bottom: calc(var(--foot-h) + 12px); font-size: 10px; }
   .sceneCaption > span:last-child { display: none; }
 
   .contextStage { padding: 180px 6% 65px; }
@@ -605,12 +605,11 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
   .meaning { bottom: 40px; font-size: 22px; }
 
   .interfaceTrack { height: 190svh; }
-  .stage { min-height: 664px; }
   .shutterL { padding-left: 6%; }
-  .shutter > span { font-size: 11vw; }
-  .destination { font-size: 15vw; top: 40%; left: 6%; }
+  .shutter > span { font-size: min(11vw, 9svh); }
+  .destination { font-size: min(15vw, 12svh); top: 40%; left: 6%; }
   .destination > span:nth-child(2) { margin-left: 20%; }
-  .interfaceCopy { left: 6%; right: 6%; bottom: 190px; }
+  .interfaceCopy { left: 6%; right: 6%; bottom: calc(var(--foot-h) + 18svh); }
   .interfaceCopy p { font-size: 21px; }
 
   .choicesStage { padding: 182px 6% 70px; }
@@ -641,4 +640,19 @@ html[data-header-mode="paper"].header-on-hero .header { background-size: var(--p
   .menuPreview { display: none; }
   .rail a { grid-template-columns: 25px 1fr 20px; gap: 12px; padding: 19px 0; font-size: 9vw; }
   .rail a > span:last-child { font-size: 21px; }
+}
+
+/* short landscape screens (phones on their side, small laptop windows) */
+@media (min-width: 760px) and (max-height: 560px) {
+  .fractureThe { font-size: clamp(26px, 9svh, 90px); }
+  .fractureWord { font-size: min(14.6vw, 22svh); }
+  .ruptureQuestion { max-width: 22ch; font-size: 16px; }
+}
+
+/* very narrow phones: tighten the control bar so every toggle stays on screen */
+@media (max-width: 380px) {
+  .foot { padding: 0 4%; gap: 8px; }
+  .indexToggle { gap: 8px; }
+  .toggles { gap: 10px; }
+  .toggle { gap: 5px; font-size: 10px; }
 }
