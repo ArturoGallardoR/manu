@@ -1,0 +1,2 @@
+() => { const out=[]; for (const ss of document.styleSheets){ let rs; try{rs=ss.cssRules}catch(e){continue}
+ const walk=(rs,m)=>{ for(const r of rs){ if(r.selectorText && /:hover|:focus-visible|transition|:active/.test(r.selectorText+r.style?.cssText) ) out.push((m?'@'+m+' ':'')+r.selectorText.replace(/[A-Za-z]+-module__\w+__/g,'.')+' {'+r.style.cssText.slice(0,260)+'}'); if(r.cssRules) walk(r.cssRules, r.media?r.media.mediaText:m);} }; walk(rs,''); } return out.join('\n'); }

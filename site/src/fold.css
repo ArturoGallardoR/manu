@@ -1,0 +1,25 @@
+.fold { position: relative; overflow: hidden; perspective: var(--fold-perspective, 4000px); perspective-origin: 50% 50%; }
+.fold__sheet { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; will-change: transform; }
+.fold__half, .fold__leaf { position: absolute; top: 0; width: 50%; height: 100%; }
+.fold__half--r { left: 50%; overflow: hidden; border-radius: 0 var(--fold-r, 0) var(--fold-r, 0) 0; }
+.fold__leaf { left: 0; transform-origin: 100% 50%; transform-style: preserve-3d; will-change: transform; }
+.fold__face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.fold__face--front { border-radius: var(--fold-r, 0) 0 0 var(--fold-r, 0); }
+.fold__face--back { transform: rotateY(180deg); border-radius: 0 var(--fold-r, 0) var(--fold-r, 0) 0; }
+.fold__slice { position: absolute; top: 0; left: 0; height: 100%; }
+.fold__clone { width: 100%; height: 100%; }
+.fold__cover { position: absolute; inset: 0; background: var(--fold-cover, color-mix(in srgb, var(--blue, #234ae8) 82%, #000)); }
+/* light: the swinging leaf dims as it turns off-axis, and throws a soft shadow over the other half */
+.fold__face::after, .fold__half--r::after, .fold__cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.fold__face--front::after { opacity: var(--fold-tilt, 0); background: linear-gradient(to right, rgba(3, 7, 22, .5), rgba(3, 7, 22, .16) 70%, rgba(3, 7, 22, .3)); }
+.fold__half--r::after { opacity: var(--fold-cast, 0); background: linear-gradient(to right, rgba(3, 7, 22, .42), rgba(3, 7, 22, 0) 45%); }
+.fold__cover::after { background: linear-gradient(100deg, transparent 38%, rgba(255, 255, 255, .16) 50%, transparent 62%) var(--fold-sheen, 120%) 0 / 250% 100% no-repeat, rgba(3, 7, 22, calc(var(--fold-tilt, 0) * .45)); }
+.fold__crease { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-.5px) translateZ(3px); opacity: var(--fold-crease, 0); background: linear-gradient(transparent, rgba(3, 7, 22, .9) 12%, rgba(3, 7, 22, .9) 88%, transparent); }
+/* the packet's crease: a soft notch down the middle of the cover that deepens before it opens */
+.fold__cover::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 14px); width: 28px; opacity: calc(.25 + var(--fold-notch, 0) * .75); background: linear-gradient(to right, transparent, rgba(3, 7, 22, .38) 45%, rgba(255, 255, 255, .08) 58%, transparent); }
+/* the travelling tuck: valley shadow, a lit ridge, then the shadow it throws */
+.fold__pleat { position: absolute; top: 0; bottom: 0; left: 50%; width: 20%; opacity: 0; transform-origin: 50% 50%; pointer-events: none; will-change: transform, opacity;
+  background: linear-gradient(to right, rgba(3, 7, 22, 0), rgba(3, 7, 22, .34) 22%, rgba(3, 7, 22, .55) 42%, rgba(3, 7, 22, .24) 56%, rgba(3, 7, 22, .38) 72%, rgba(3, 7, 22, 0)); }
+.fold__content { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.fold.is-flat .fold__content { opacity: 1; pointer-events: auto; }
+.fold.is-flat .fold__sheet { visibility: hidden; }

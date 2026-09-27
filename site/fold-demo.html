@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fold reveal — demo</title>
+<style>
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center; gap: 24px; background: #090e13; color: #f2f4f1; font: 16px/1.4 "Inter Tight", Helvetica, Arial, sans-serif; }
+  .demo { width: min(1200px, 92vw); height: 56svh; }
+  .sheet { height: 100%; background: #234ae8; display: grid; place-items: center; }
+  .sheet h1 { margin: 0; font-size: clamp(48px, 9vw, 150px); letter-spacing: -.06em; line-height: .85; }
+  .controls { display: flex; gap: 16px; align-items: center; }
+  button { font: inherit; color: inherit; background: none; border: 1px solid #555; padding: 8px 14px; cursor: pointer; }
+</style>
+</head>
+<body>
+  <div class="demo" data-demo><div class="sheet"><h1>Puertas abiertas.</h1></div></div>
+  <div class="controls">
+    <button type="button" data-replay>Replay</button>
+    <input type="range" min="0" max="1" step="0.001" value="0" data-scrub aria-label="Progress" />
+  </div>
+  <script type="module">
+    import { createFoldReveal } from './src/fold.js';
+    const reveal = createFoldReveal(document.querySelector('[data-demo]'));
+    const scrub = document.querySelector('[data-scrub]');
+    scrub.addEventListener('input', () => reveal.setProgress(Number(scrub.value)));
+    document.querySelector('[data-replay]').addEventListener('click', () => { reveal.setProgress(0); reveal.play(); });
+    reveal.play();
+    window.__reveal = reveal;
+  </script>
+</body>
+</html>

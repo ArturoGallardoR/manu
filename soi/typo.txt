@@ -1,0 +1,94 @@
+{'--margin': '6vw', '--gutter': '24px', '--header-h': '64px', '--text-body': '19px', '--text-question': 'clamp(44px, 7vw, 128px)', '--text-title': 'clamp(32px, 4.6vw, 72px)', '--measure': '64ch'}
+ 21748 x65    w207   "ABC Diatype"     15px 500 lh=23.25px  ls=-0.15px  none      rgb(242, 244, 241)     wordmark                           | The Shape of Intelligence
+ 21725 x0     w0     "ABC Diatype M    11px 500 lh=17.05px  ls=0.88px   uppercase rgb(242, 244, 241)                                        | by Jamie McKaye
+ 21747 x1130  w30    "ABC Diatype"     13px 400 lh=20.15px  ls=normal   none      rgb(242, 244, 241)     label                              | Read
+ 22592 x118   w49    "ABC Diatype"     12px 400 lh=18.6px   ls=normal   none      rgb(242, 244, 241)                                        | Chapters
+ 22594 x191   w42    "ABC Diatype M    10px 400 lh=15.5px   ls=normal   none      rgb(184, 196, 197)     Chrome-module__jYh-RW__current     | 08 / 08
+ 22580 x1234  w65    "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(242, 244, 241)     Chrome-module__jYh-RW__toggle      | Sound off
+ 21725 x0     w0     "ABC Diatype"     14px 400 lh=21.7px   ls=normal   none      rgb(32, 38, 35)                                           | Explore the exhibition
+ 21725 x0     w0     "ABC Diatype"     13px 400 lh=20.15px  ls=normal   none      rgb(32, 38, 35)                                           | Close ×
+ 21725 x0     w0     "ABC Diatype"     27px 400 lh=41.85px  ls=normal   none      rgb(32, 38, 35)                                           | ×
+ 21725 x0     w0     "ABC Diatype"  172.8px 400 lh=172.8px  ls=-11.232px none      rgb(242, 244, 241)                                        | 01
+ 21725 x0     w0     "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(242, 244, 241)                                        | An imagined installation
+ 21725 x0     w0     "ABC Diatype"  53.28px 400 lh=53.28px  ls=-2.3976px none      rgb(32, 38, 35)                                           | The question
+ 21725 x0     w0     "ABC Diatype"     25px 400 lh=25px     ls=-2.3976px none      rgb(32, 38, 35)                                           | ↗
+ 21725 x0     w0     "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(90, 98, 94)        Chrome-module__jYh-RW__menuNote    | Eight chapters. Many overlapping histori
+   136 x-32   w1075  "ABC Diatype"    207px 400 lh=173.88px ls=-2.66px  none      rgb(32, 38, 35)        titleFirst                         | The Shape of
+   136 x983   w59    "ABC Diatype"  78.66px 400 lh=66.0744px ls=-4.3263px none      rgb(32, 38, 35)                                           | of
+   356 x146   w1264  "ABC Diatype"    252px 400 lh=211.68px ls=-2.66px  none      rgb(32, 38, 35)        titleLast                          | Intelligence
+   316 x910   w62    "ABC Diatype"     12px 400 lh=13.2px   ls=normal   none      rgb(242, 244, 241)     pullHint                           | Drag to reshape
+   737 x605   w11    "ABC Diatype M     9px 400 lh=13.95px  ls=normal   none      rgb(90, 98, 94)                                           | 01
+   809 x605   w389   "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(90, 98, 94)        poseThought                        | A structure changed by experience.
+   768 x1196  w100   "ABC Diatype"     15px 400 lh=23.25px  ls=normal   none      rgb(32, 38, 35)                                           | Begin the story
+   752 x1319  w56    "ABC Diatype"     27px 400 lh=41.85px  ls=normal   none      rgb(32, 38, 35)        beginArrow                         | ↘
+ 21725 x0     w0     "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(90, 98, 94)        artCredit                          | An interactive sculpture by The Shape of
+  2372 x65    w367   "ABC Diatype"     13px 400 lh=18.2px   ls=normal   none      rgb(32, 38, 35)        prologueSide                       | An exhibition by Jamie McKaye
+  1938 x377   w1053  "ABC Diatype"  97.92px 400 lh=100.858px ls=-5.3856px none      rgb(32, 38, 35)                                           | First, we tried to write the rules.
+  2645 x432   w943   "ABC Diatype"     14px 400 lh=21.7px   ls=normal   none      rgb(90, 98, 94)        prologueNote                       | Eight chapters in the history of an idea
+  2803 x1321  w32    "ABC Diatype"     48px 400 lh=74.4px   ls=normal   none      rgb(32, 38, 35)                                           | ↓
+  3086 x139   w69    "ABC Diatype"     12px 400 lh=18.6px   ls=normal   none      rgb(242, 244, 241)     metaName                           | The question
+  2969 x-1    w1     "ABC Diatype"   28.5px 500 lh=29.07px  ls=-0.57px  none      rgb(242, 244, 241)     visuallyHidden                     | Can a machine think?
+  3155 x86    w307   "ABC Diatype"   50.4px 400 lh=78.12px  ls=-1.764px none      rgb(242, 244, 241)     anamorphLead                       | Can a machine
+  3619 x616   w208   "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(184, 196, 197)     dragHint                           | Drag to change your point of view ↔
+  3619 x808   w16    "ABC Diatype"     19px 400 lh=29.45px  ls=normal   none      rgb(184, 196, 197)                                        | ↔
+  3685 x778   w123   "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(184, 196, 197)                                        | A question of perspective
+  3686 x86    w251   "ABC Diatype"  31.68px 400 lh=38.016px ls=-0.792px none      rgb(242, 244, 241)     anamorphQuestion                   | Same object. A different reading.
+  3779 x86    w195   "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(184, 196, 197)     anamorphCredit                     | An anamorphic sculpture. An open questio
+  3990 x115   w399   "ABC Diatype M    13px 400 lh=20.15px  ls=normal   none      rgb(90, 98, 94)        chapterIndex                       | 01 — The question
+  4055 x115   w399   "ABC Diatype"   43.2px 400 lh=50.112px ls=-1.512px none      rgb(32, 38, 35)        understands                        | Defining intelligence was part of the pr
+  4291 x115   w399   "ABC Diatype"     14px 400 lh=21.7px   ls=normal   none      rgb(32, 38, 35)        readDoor                           | Read this chapter ↗
+  4396 x115   w399   "ABC Diatype"     14px 400 lh=21.7px   ls=normal   none      rgb(32, 38, 35)        listen                             | Listen to this chapter
+  4434 x115   w271   "ABC Diatype"     11px 400 lh=15.95px  ls=normal   none      rgb(90, 98, 94)        meta                               | Narration, synthesised from Jamie McKaye
+ 21725 x0     w0                             lh=         ls=                                                                             | Download the narration (MP3)
+  4475 x672   w98    "ABC Diatype M    11px 400 lh=17.6px   ls=normal   none      rgb(90, 98, 94)        eventYear                          | 1943
+  4471 x1314  w11    "ABC Diatype"     17px 400 lh=27.2px   ls=normal   none      rgb(32, 38, 35)                                           | ↗
+  5408 x86    w393   "ABC Diatype"  126.72px 400 lh=114.048px ls=-8.2368px none      rgb(32, 38, 35)                                           | The rules.
+  5681 x86    w326   "ABC Diatype"     23px 400 lh=31.05px  ls=normal   none      rgb(32, 38, 35)                                           | How far could explicitly programmed reas
+  5804 x86    w185   "ABC Diatype"     12px 400 lh=16.8px   ls=normal   none      rgb(90, 98, 94)        labInvitation                      | An idea you can put to the test ↗
+  5804 x247   w24    "ABC Diatype"     36px 400 lh=50.4px   ls=normal   none      rgb(32, 38, 35)                                           | ↗
+  4942 x568   w65    "ABC Diatype"     12px 500 lh=12.24px  ls=normal   none      rgb(90, 98, 94)        label                              | Try the rules
+  4939 x1251  w103   "ABC Diatype"     12px 400 lh=18.6px   ls=normal   none      rgb(90, 98, 94)        counter                            | 6 rules · 7 junctions
+  4991 x568   w91    "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(90, 98, 94)        specimen                           | square
+  5228 x625   w169   "ABC Diatype"  51.84px 400 lh=57.024px ls=-2.592px none      rgb(32, 38, 35)                                           | Choose a shape.
+  5525 x568   w786   "ABC Diatype"     19px 400 lh=26.6px   ls=normal   none      rgb(32, 38, 35)        readout                            | Pick a specimen to run it through the ru
+  5632 x568   w54    "ABC Diatype"     12px 400 lh=18.6px   ls=normal   none      rgb(90, 98, 94)        label                              | Add a rule
+  5630 x642   w31    "ABC Diatype"     12px 400 lh=18.6px   ls=normal   none      rgb(32, 38, 35)        door                               | Reset
+  5666 x568   w786   "ABC Diatype"     14px 400 lh=19.6px   ls=normal   none      rgb(32, 38, 35)        addition                           | If it has four sides and rounded corners
+  5837 x568   w786   "ABC Diatype"     11px 400 lh=16.5px   ls=normal   none      rgb(90, 98, 94)        caption note                       | An educational illustration: a small rul
+  8178 x65    w1310  "ABC Diatype"   79.2px 400 lh=79.2px   ls=-1.8525px none      rgb(242, 244, 241)     fractureThe                        | The
+  8262 x65    w1310  "ABC Diatype"  295.2px 400 lh=295.2px  ls=-1.8525px none      rgb(242, 244, 241)     fractureWhole                      | promise.
+  8214 x43    w1313  "ABC Diatype"  295.2px 400 lh=295.2px  ls=-1.8525px none      rgb(242, 244, 241)                                        | promise.
+  8609 x878   w385   "ABC Diatype"     25px 400 lh=32px     ls=normal   none      rgb(242, 244, 241)     ruptureQuestion                    | Why did expectations repeatedly outrun r
+ 10788 x86    w393   "ABC Diatype"  106.56px 400 lh=95.904px ls=-6.9264px none      rgb(32, 38, 35)                                           | The examples.
+  9961 x568   w109   "ABC Diatype"     13px 500 lh=13.26px  ls=normal   none      rgb(90, 98, 94)        label                              | Teach the machine
+  9957 x1245  w108   "ABC Diatype"     13px 400 lh=20.15px  ls=normal   none      rgb(90, 98, 94)        counter                            | 0 steps · training —
+ 10017 x568   w63    "ABC Diatype"     14px 400 lh=21.7px   ls=normal   none      rgb(35, 74, 232)       chip                               | Two blobs
+ 10130 x568   w151   "ABC Diatype"     15px 400 lh=23.25px  ls=normal   none      rgb(242, 244, 241)     door                               | Run 50 steps →
+ 21725 x0     w0     "ABC Diatype"     19px 400 lh=29.45px  ls=normal   none      rgb(32, 38, 35)        [object SVGAnimatedString]         | 
+ 11001 x568   w432   "ABC Diatype"     72px 400 lh=72px     ls=-3.24px  none      rgb(32, 38, 35)                                           | —
+ 11100 x568   w786   "ABC Diatype"     15px 400 lh=21px     ls=normal   none      rgb(32, 38, 35)        readout                            | Two blobs: 40 in tray A, 40 in tray B. R
+  9472 x-8829 w19097 "ABC Diatype"  446.4px 500 lh=401.76px ls=-33.48px none      rgb(242, 244, 241)                                        | scale.
+ 13874 x65    w425   "ABC Diatype"     30px 400 lh=36px     ls=normal   none      rgb(242, 244, 241)                                        | What became possible when methods, compu
+ 14040 x65    w1310  "ABC Diatype"     11px 400 lh=17.05px  ls=normal   none      rgb(184, 196, 197)     sceneCaption                       | An impossible archive. An imagined insta
+ 15148 x86    w307   "ABC Diatype"  61.92px 400 lh=56.9664px ls=-2.7864px none      rgb(242, 244, 241)                                        | The context.
+ 15148 x1004  w349   "ABC Diatype"     21px 400 lh=27.3px   ls=normal   none      rgb(242, 244, 241)                                        | How did attention and transformers chang
+ 15280 x321   w797   "ABC Diatype"    425px 400 lh=361.25px ls=-27.625px none      rgb(242, 244, 241)                                        | bank
+ 15656 x662   w115   "ABC Diatype"     21px 400 lh=32.55px  ls=-0.525px none      rgb(242, 244, 241)     meaning                            | a river’s edge
+ 21725 x0     w0     "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(242, 244, 241)     fieldCaption                       | Drag through the word.
+ 21725 x0     w0     "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(242, 244, 241)     bendControl                        | Bend the field
+ 15723 x86    w380   "ABC Diatype"     22px 400 lh=34.1px   ls=normal   none      rgb(242, 244, 241)                                        | Beside the river
+ 15940 x619   w554   "ABC Diatype"     18px 400 lh=27px     ls=normal   none      rgb(242, 244, 241)     worldExplanation                   | “River” gives “bank” a geographical cont
+ 16019 x619   w461   "ABC Diatype"     11px 400 lh=16.5px   ls=normal   none      rgb(242, 244, 241)     worldNote                          | An authored illustration of contextual m
+ 17964 x-1    w1     "ABC Diatype"   28.5px 500 lh=29.07px  ls=-0.57px  none      rgb(242, 244, 241)     hidden                             | The interface.
+ 18223 x245   w1080  "ABC Diatype"  201.6px 400 lh=165.312px ls=-13.104px none      rgb(242, 244, 241)                                        | A new
+ 18234 x-608  w488   "ABC Diatype"  316.8px 400 lh=316.8px  ls=-23.76px none      rgb(242, 244, 241)                                        | You.
+ 18657 x86    w507   "ABC Diatype"  31.68px 400 lh=38.6496px ls=-0.792px none      rgb(242, 244, 241)                                        | What happens when people can converse wi
+ 18657 x897   w456   "ABC Diatype"     20px 400 lh=31px     ls=normal   none      rgb(242, 244, 241)                                        | Close the interface ↙
+ 19978 x86    w205   "ABC Diatype"  60.48px 400 lh=59.2704px ls=-3.3264px none      rgb(242, 244, 241)                                        | The next shape.
+ 20506 x86    w145   "ABC Diatype"     10px 400 lh=15.5px   ls=normal   none      rgb(184, 196, 197)     credit                             | Three paths. One unfolding form.
+ 20564 x86    w380   "ABC Diatype"   43.2px 400 lh=66.96px  ls=-1.512px none      rgb(242, 244, 241)                                        | Purpose ↗
+ 21725 x0     w0     "ABC Diatype"     19px 400 lh=29.45px  ls=normal   none      rgb(242, 244, 241)     eyebrow                            | Choose the question you want to follow.
+ 20906 x86    w466   "ABC Diatype"     18px 400 lh=27px     ls=normal   none      rgb(184, 196, 197)                                        | Who defines the goal? Which measures cou
+ 20831 x975   w347   "ABC Diatype"     16px 400 lh=24.8px   ls=normal   none      rgb(242, 244, 241)                                        | The Dartmouth workshop names the field
+ 21755 x86    w1267  "ABC Diatype"  187.2px 400 lh=155.376px ls=-12.168px none      rgb(242, 244, 241)                                        | Keep
+ 22502 x86    w407   "ABC Diatype"     15px 400 lh=22.5px   ls=normal   none      rgb(184, 196, 197)     footerCopy                         | A history of the ideas that taught machi
